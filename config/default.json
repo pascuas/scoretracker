@@ -1,0 +1,3 @@
+{
+    "mongoURI": "mongodb+srv://stan123:stan123@scoretracker.jyinc.mongodb.net/<dbname>?retryWrites=true&w=majority"
+}
