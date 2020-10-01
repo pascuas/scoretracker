@@ -1,12 +1,16 @@
 const express = require('express');
+const PORT = process.env.PORT || 5000;
 const connectDB = require('./config/db');
 
 const app = express();
+const userRoutes = require('./routes/user');
 
 connectDB();
 
 app.get('/', (req, res) => res.json({ msg:'Welcome to my api' }));
 
-const PORT = process.env.PORT || 5000;
+app.use('/api/users', userRoutes)
+
+
 
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
