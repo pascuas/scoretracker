@@ -7,6 +7,9 @@ const userRoutes = require('./routes/user');
 
 connectDB();
 
+//Init Middleware / this will accept body data
+app.use(express.json({ extended: false }));
+
 app.get('/', (req, res) => res.json({ msg:'Welcome to my api' }));
 
 app.use('/api/users', userRoutes)
