@@ -4,6 +4,7 @@ const connectDB = require('./config/db');
 
 const app = express();
 const userRoutes = require('./routes/user');
+const authRoutes = require('./routes/auth')
 
 connectDB();
 
@@ -13,6 +14,7 @@ app.use(express.json({ extended: false }));
 app.get('/', (req, res) => res.json({ msg:'Welcome to my api' }));
 
 app.use('/api/users', userRoutes)
+app.use('/api/auth', authRoutes)
 
 
 
