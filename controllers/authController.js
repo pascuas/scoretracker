@@ -4,12 +4,19 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const config = require('config');
 
+
 // @route - GET api/auth
 // @desc - Get logged in user
 // @access - private
 
-const getAuth = (req, res) => {
-    res.send('Get logged in user');
+const getAuth = async(req, res) => {
+    try {
+        const user = await User.findById(req.user.id).select('-password'); // don't want to return the password
+        res.json(user)
+    } catch (err) {
+        console.error(err.message);
+        res.status(500).send('Server Error')
+    }
 }
 
 
@@ -56,5 +63,6 @@ const create = async(req, res) => {
 }
 
 module.exports = {
+    getAuth,
     create
 }
