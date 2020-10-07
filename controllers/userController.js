@@ -1,6 +1,8 @@
 const User = require('../models/user');
 const { validationResult } = require('express-validator');
 const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
+const config = require('config');
 
 //@route POST api/users
 //description - register a user
@@ -34,7 +36,21 @@ const create = async (req, res) => {
 
         await user.save();
 
-        res.send("User saved")
+        // object we want to send in the token
+        // with the user id, we can access what ever data is saved from the user
+        const payload = {
+            user: {
+                id: user.id
+            }
+        }
+
+        // to generate a token, we have to sign it
+        jwt.sign(payload, config.get('jwtSecret'), {
+            expiresIn: 360000
+        }, (err, token) => {
+            if(err) throw err;
+            res.json({ token });
+        });
 
     } catch (err) {
         console.error(err.message);
