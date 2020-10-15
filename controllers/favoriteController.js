@@ -18,10 +18,29 @@ const getFavs = async (req, res) => {
 //@route - POST api/favorites
 //@desc - Add a favorite
 //@access - private
-const create = (req, res) => {
-    res.send("add favorite")
+const create = async (req, res) => {
+    const errors = validationResult(req);
+    if(!errors.isEmpty()) {
+        return res.status(400).json({ errors: errors.array() });
+    }
+
+    const { teamName } = req.body;
+
+    try {
+        const newFavorite = new Favorite({
+            teamName,
+            user: req.user.id
+        });
+
+        const fave = await newFavorite.save();
+        res.json(fave)
+    } catch (err) {
+        console.error(err.message);
+        res.status(500).send('Server Error');
+    }
 }
 
 module.exports = {
-    getFavs
+    getFavs,
+    create
 }

@@ -10,4 +10,4 @@ const FavoriteSchema = mongoose.Schema({
     }
 })
 
-module.exports = mongoose.model('facorite', FavoriteSchema)
+module.exports = mongoose.model('favorite', FavoriteSchema)
