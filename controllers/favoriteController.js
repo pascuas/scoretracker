@@ -40,7 +40,28 @@ const create = async (req, res) => {
     }
 }
 
+const deleteFave = async (req, res) => {
+    try {
+        let favorite = await Favorite.findById(req.params.id);
+
+        if(!favorite) return res.status(404).json({ msg: 'Favorite not found'});
+
+        //Make sure user owns favorite
+        if (favorite.user.toString() !== req.user.id) {
+            return res.status(401).json({msg: 'Not authorized'})
+        }
+
+        await Favorite.findByIdAndRemove(req.params.id);
+
+        res.json({ msg: 'Favorite Removed'})
+    } catch (err) {
+        console.error(err.message);
+        res.status(500).send('Server Error')
+    }
+}
+
 module.exports = {
     getFavs,
-    create
+    create,
+    deleteFave
 }

@@ -8,6 +8,7 @@ router.get('/', auth, favoriteController.getFavs);
 router.post('/', [ auth, [
     check('teamName', 'Name is required').not().isEmpty()
 ]], favoriteController.create);
+router.delete('/:id', auth, favoriteController.deleteFave)
 
 
 module.exports = router
