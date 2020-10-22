@@ -14,6 +14,13 @@ body {
   color: #333;
 }
 
+.container {
+  max-width: 1100px;
+  margin: auto;
+  overflow: hidden;
+  padding: 0 2rem;
+}
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -24,4 +31,23 @@ body {
   border-bottom: solid 1px #2c69ff;
   background: #2c69ff;
   color: #fff;
+  opacity: 0.9;
+  margin-bottom: 1rem;
+}
+
+.p {
+  padding: 0.5rem;
+}
+
+.my-1 {
+  margin: 1rem 0;
+}
+
+.bg-dark {
+  background: #333;
+  color: #fff;
+}
+
+h1 {
+  text-align: center;
 }
