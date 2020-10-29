@@ -11,6 +11,20 @@ const TeamState = props => {
         results: null,
         error: null
     }
+
+
+    const [ state, dispatch ] = useReducer(teamReducer, initialState);
+
+    // Get results
+
+    return (
+        <TeamContext.Provider
+        value={{
+            results: state.results
+        }}>
+            { props.children }
+        </TeamContext.Provider>
+    );
 }
 
-const [ state, dispatch ] = useReducer(teamReducer, initialState);
+export default TeamState
