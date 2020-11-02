@@ -1,4 +1,5 @@
 import React, { Fragment, useContext, useEffect } from 'react';
+import ResultItem from './ResultItem';
 import TeamContext from '../../context/team/teamContext';
 
 const Results = () => {
@@ -10,12 +11,17 @@ const Results = () => {
         getResults();
         // eslint-disable-next-line
     }, []);
-
-    console.log('results',results)
+    
+    if(results === null) {
+        return <></>
+    }
+    console.log('results',results.events)
 
     return (
         <Fragment>
-            <h3>Results</h3>
+            {results.events.map(event => (
+                <ResultItem event={event} />
+            ))}
         </Fragment>
     )
 }
