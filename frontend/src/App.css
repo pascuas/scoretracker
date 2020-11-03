@@ -79,6 +79,28 @@ h1 {
   text-align: center;
 }
 
-/* .itemFlex {
+.itemFlex {
   display: flex;
-} */
+  align-items: center;
+  justify-content: space-between;
+  width: 400px;
+}
+
+.info {
+  display: flex;
+}
+
+.score span {
+  padding-right: 1.5em;
+}
+
+.gray {
+  color: gray;
+}
+
+
+
+.resultContainer {
+  margin-bottom: 2em;
+  border: 1px solid black
+}

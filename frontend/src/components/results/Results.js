@@ -19,8 +19,8 @@ const Results = () => {
 
     return (
         <Fragment>
-            {results.events.map(event => (
-                <ResultItem event={event} />
+            {results.events.map((event, index) => (
+                <ResultItem key={index} event={event} />
             ))}
         </Fragment>
     )
