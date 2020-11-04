@@ -10,8 +10,8 @@ const ResultItem = ({ event }) => {
                 <div className="itemFlex">
                     <div className="info" >
                         <img src={competitor.team.logo} alt="teamlogo" width="42" height="52" />
-                        <h1>{competitor.team.name}</h1>
-                        {/* <p>{competitor.score}</p> */}
+                        {competitor.team.name ? <h1>{competitor.team.name}</h1> : <h1>{competitor.team.displayName}</h1> }
+                        <h3 className="record gray">({competitor.records[0].summary})</h3>
                     </div>
                     <div className="score" >
                         {parseInt(competitor.score) > parseInt(competitions[0].competitors[0].score) || parseInt(competitor.score) > parseInt(competitions[0].competitors[1].score) ? <span>{competitor.score}</span> : <span className="gray">{competitor.score}</span> }

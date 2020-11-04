@@ -98,6 +98,9 @@ h1 {
   color: gray;
 }
 
+.record {
+  padding: 0.7em 0 0 0.5em;
+}
 
 
 .resultContainer {
