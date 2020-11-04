@@ -86,6 +86,13 @@ h1 {
   width: 400px;
 }
 
+.itemFlex2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 400px;
+}
+
 .info {
   display: flex;
 }
