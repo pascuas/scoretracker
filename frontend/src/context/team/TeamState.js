@@ -5,12 +5,14 @@ import teamReducer from './teamReducer';
 
 import {
     GET_RESULTS,
+    GET_FAVORITES,
     RESULTS_ERROR
 } from '../types';
 
 const TeamState = props => {
     const initialState = {
         results: null,
+        favorites: null,
         error: null
     };
 
@@ -28,12 +30,25 @@ const TeamState = props => {
         }
     }
 
+    // Get favorites
+    const getFavs = async () => {
+        try {
+            const res = await axios.get('api/favorites');
+
+            dispatch({ type: GET_FAVORITES, payload: res.data})
+        } catch (err) {
+            dispatch({ type: RESULTS_ERROR, payload: err.response.msg });
+        }
+    }
+
     return (
         <TeamContext.Provider
         value={{
             results: state.results,
+            favorites: state.favorites,
             error: state.error,
-            getResults
+            getResults,
+            getFavs
         }}>
             { props.children }
         </TeamContext.Provider>

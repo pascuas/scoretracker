@@ -1,2 +1,3 @@
 export const GET_RESULTS = 'GET_RESULTS';
+export const GET_FAVORITES = 'GET_FAVORITES';
 export const RESULTS_ERROR = 'RESULTS_ERROR';
