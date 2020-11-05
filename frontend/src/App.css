@@ -6,6 +6,15 @@
   padding: 0;
 }
 
+:root {
+  --primary-color: #2c69ff;
+  --gray-color: gray
+}
+
+.gray {
+  color: var(--gray-color);
+}
+
 body {
   font-family: 'Roboto', sans-serif;
   font-size: 1rem; 
@@ -24,11 +33,15 @@ ul {
 }
 
 .container {
-  display: flex;
   max-width: 1100px;
   margin: auto;
   overflow: hidden;
   padding: 0 2rem;
+}
+
+/* text */
+.text-primary {
+  color: var(--primary-color);
 }
 
 .aboutpage {
@@ -38,6 +51,8 @@ ul {
   padding: 0 2rem;
 }
 
+
+/* navbar */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -62,6 +77,10 @@ ul {
   margin: 0 0.25rem;
 }
 
+.navbar a:hover {
+  color: var(--gray-color);
+}
+
 .p {
   padding: 0.5rem;
 }
@@ -80,6 +99,7 @@ h1 {
 }
 
 .resultContainer {
+  max-width: 620px;
   margin-bottom: 2em;
   border: 1px solid black;
   display: grid;
@@ -127,12 +147,80 @@ h1 {
   padding-right: 1.5em;
 }
 
-.gray {
-  color: gray;
-}
-
 .record {
   padding: 0.7em 0 0 0.5em;
+}
+
+/* btns and forms */
+
+.btn {
+  display: inline-block;
+  background: var(--light-color);
+  color: #333;
+  padding: 0.4rem 1.3rem;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  margin-right: 0.5rem;
+  transition: opacity 0.2s ease-in;
+  outline: none;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+.btn-primary {
+  background: var(--primary-color);
+  color: #fff;
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+}
+
+input {
+  margin: 1.2rem 0;
+}
+
+input[type='text'],
+input[type='email'],
+input[type='password'],
+input[type='date'],
+select,
+textarea {
+  display: block;
+  width: 100%;
+  padding: 0.4rem;
+  font-size: 1.2rem;
+  border: 1px solid #ccc;
+}
+
+input[type='submit'],
+button {
+  font: inherit;
+}
+
+.form-group {
+  margin: 1.2rem 0;
+}
+
+.form-group input {
+  margin: 0.2rem 0;
+}
+
+.form-container {
+  max-width: 500px;
+  margin: 2rem auto;
+  overflow: hidden;
+  padding: 0 2rem;
+}
+
+.form-container h1,
+h2,
+h3 {
+  text-align: center;
 }
 
 

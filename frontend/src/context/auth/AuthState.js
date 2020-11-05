@@ -50,4 +50,4 @@ const AuthState = props => {
     );
 }
 
-export default TeamState
+export default AuthState
