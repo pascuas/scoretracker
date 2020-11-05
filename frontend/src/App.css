@@ -79,11 +79,29 @@ h1 {
   text-align: center;
 }
 
+.resultContainer {
+  margin-bottom: 2em;
+  border: 1px solid black;
+  display: grid;
+  grid-template-columns: 1fr 0.5fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "location side"
+    "teamOne side"
+    "teamTwo side"
+}
+
+.location {
+  grid-area: location;
+  padding-left: 1em;
+}
+
 .itemFlex {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 400px;
+  grid-area: teamOne;
 }
 
 .itemFlex2 {
@@ -91,10 +109,18 @@ h1 {
   align-items: center;
   justify-content: space-between;
   width: 400px;
+  grid-area: teamTwo;
+}
+
+.gameInfo {
+  grid-area: side;
+  align-self: center;
+  text-align: center;
 }
 
 .info {
   display: flex;
+  padding-left: 1em;
 }
 
 .score span {
@@ -110,7 +136,3 @@ h1 {
 }
 
 
-.resultContainer {
-  margin-bottom: 2em;
-  border: 1px solid black
-}

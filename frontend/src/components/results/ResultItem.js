@@ -1,8 +1,8 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 
 const ResultItem = ({ event }) => {
 
-    const { name, competitions, status } = event
+    const { competitions, status } = event
 
     // const renderResult = competitions[0].competitors.map((competitor, index) => {
     //     return(
@@ -21,9 +21,18 @@ const ResultItem = ({ event }) => {
     //     ) 
     // })
 
+    const renderTv = competitions[0].broadcasts[0].names.map((name, index) => {
+        return(
+            <span className="gray" key={index}> ({name}) </span>
+        )
+    })
+
 
     return (
         <div className="resultContainer">
+            <div className="location">
+                <span className="gray">{competitions[0].venue.fullName} - {competitions[0].venue.address.city}, {competitions[0].venue.address.state}</span>
+            </div>
             <div className="itemFlex">
                 <div className="info" >
                     <img src={competitions[0].competitors[0].team.logo} alt="teamlogo" width="42" height="52" />
@@ -44,7 +53,10 @@ const ResultItem = ({ event }) => {
                     {parseInt(competitions[0].competitors[1].score) > parseInt(competitions[0].competitors[0].score) || parseInt(competitions[0].competitors[1].score) > parseInt(competitions[0].competitors[1].score) ? <span>{competitions[0].competitors[1].score}</span> : <span className="gray">{competitions[0].competitors[1].score}</span> }
                 </div> : <></>}
             </div>
-            <p>schedule</p>
+            {status.type.description === "Scheduled" ? <div className="gameInfo">
+                <p>{status.type.shortDetail}</p>
+                {renderTv}
+            </div> : <></> }
         </div>
     )
 }
