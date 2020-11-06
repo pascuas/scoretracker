@@ -56,7 +56,7 @@ const ResultItem = ({ event }) => {
             {status.type.description === "Scheduled" ? <div className="gameInfo">
                 <p>{status.type.shortDetail}</p>
                 {renderTv}
-            </div> : <></> }
+            </div> : <div className="gameInfo"><p>{status.type.shortDetail}</p></div>}
         </div>
     )
 }
