@@ -6,6 +6,7 @@ import About from './components/pages/About';
 import Favorites from './components/favorites/Favorites';
 import Register from './components/pages/Register';
 import Login from './components/pages/Login';
+import Alerts from './components/layout/Alerts';
 
 import TeamState from './context/team/TeamState';
 import AuthState from './context/auth/AuthState';
@@ -21,6 +22,7 @@ const App = () => {
             <Fragment>
               <Navbar />
               <div className="container">
+                <Alerts />
                 <Switch>
                   <Route exact path='/' component={Home} />
                   <Route exact path='/about' component={About} />

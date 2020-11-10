@@ -8,7 +8,8 @@
 
 :root {
   --primary-color: #2c69ff;
-  --gray-color: gray
+  --gray-color: gray;
+  --danger-color: #dc3545;
 }
 
 .gray {
@@ -221,6 +222,21 @@ button {
 h2,
 h3 {
   text-align: center;
+}
+
+/* alert */
+
+.alert {
+  padding: 0.7rem;
+  margin: 1rem 0;
+  opacity: 0.9;
+  background: var(--light-color);
+  color: #333;
+}
+
+.alert-danger {
+  background: var(--danger-color);
+  color: #fff;
 }
 
 
