@@ -5,6 +5,7 @@ import Home from './components/pages/Home';
 import About from './components/pages/About';
 import Favorites from './components/favorites/Favorites';
 import Register from './components/pages/Register';
+import Login from './components/pages/Login';
 
 import TeamState from './context/team/TeamState';
 import AuthState from './context/auth/AuthState';
@@ -23,6 +24,7 @@ const App = () => {
                 <Route exact path='/about' component={About} />
                 <Route exact path='/favorites' component={Favorites} />
                 <Route exact path='/register' component={Register} />
+                <Route exact path='/login' component={Login} />
               </Switch>
             </div>
           </Fragment>
