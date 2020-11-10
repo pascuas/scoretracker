@@ -1,5 +1,6 @@
 import React, {useContext, useEffect} from 'react'
 import TeamContext from '../../context/team/teamContext';
+import axios from 'axios';
 
 
 const Favorites = () => {
@@ -13,7 +14,9 @@ const Favorites = () => {
         // eslint-disable-next-line
     }, []);
 
+
     console.log('favs', favorites)
+
 
     return (
         <div>
