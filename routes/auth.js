@@ -8,7 +8,7 @@ router.get('/', auth, authController.getAuth)
 
 router.post('/', [
     check('email', 'Please include a valid email').isEmail(),
-    check('password', 'Passowrd is require').exists()
+    check('password', 'Password is require').exists()
 ], authController.create)
 
 
