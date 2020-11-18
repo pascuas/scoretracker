@@ -1,5 +1,6 @@
-import React, {useContext, useEffect} from 'react'
+import React, { Fragment, useContext, useEffect } from 'react'
 import TeamContext from '../../context/team/teamContext';
+import {Link} from 'react-router-dom';
 import axios from 'axios';
 
 
@@ -14,14 +15,18 @@ const Favorites = () => {
         // eslint-disable-next-line
     }, []);
 
+    if(favorites === null) {
+        return <></>
+    }
 
     console.log('favs', favorites)
 
 
     return (
-        <div>
+        <Fragment>
+            {favorites.length === 0 ? <Link to='/editfavorites'>Add Favorites</Link> : <Link to='/editfavorites'>Edit Favorites</Link> }
             <h1>Favs</h1>
-        </div>
+        </Fragment>
     )
 }
 

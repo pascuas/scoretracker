@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import Navbar from './components/layout/Navbar';
 import Home from './components/pages/Home';
 import About from './components/pages/About';
-import Favorites from './components/favorites/Favorites';
+import EditFave from './components/favorites/EditFave';
 import Register from './components/pages/Register';
 import Login from './components/pages/Login';
 import Alerts from './components/layout/Alerts';
@@ -31,7 +31,7 @@ const App = () => {
                 <Switch>
                   <Route exact path='/' component={Home} />
                   <Route exact path='/about' component={About} />
-                  <Route exact path='/favorites' component={Favorites} />
+                  <Route exact path='/editfavorites' component={EditFave} />
                   <Route exact path='/register' component={Register} />
                   <Route exact path='/login' component={Login} />
                 </Switch>
