@@ -6,6 +6,7 @@ import teamReducer from './teamReducer';
 import {
     GET_RESULTS,
     GET_FAVORITES,
+    GET_TEAMS,
     RESULTS_ERROR
 } from '../types';
 
@@ -13,7 +14,8 @@ const TeamState = props => {
     const initialState = {
         results: null,
         favorites: null,
-        error: null
+        error: null,
+        teams: null
     };
 
 
@@ -41,13 +43,26 @@ const TeamState = props => {
         }
     }
 
+    // Get teams
+    const getTeams = async () => {
+        try {
+            const res = await axios.get("https://cors-anywhere.herokuapp.com/https://www.thesportsdb.com/api/v1/json/4013017/search_all_teams.php?l=NFL");
+    
+            dispatch({ type: GET_TEAMS, payload: res.data});
+        } catch (err) {
+            dispatch({ type: RESULTS_ERROR, payload: err.response.msg });
+        }
+    }
+
     return (
         <TeamContext.Provider
         value={{
             results: state.results,
             favorites: state.favorites,
             error: state.error,
+            teams: state.teams,
             getResults,
+            getTeams,
             getFavs
         }}>
             { props.children }

@@ -1,7 +1,8 @@
 import {
     GET_RESULTS,
     GET_FAVORITES,
-    RESULTS_ERROR
+    RESULTS_ERROR,
+    GET_TEAMS,
 } from '../types';
 
 export default (state, action) => {
@@ -10,6 +11,12 @@ export default (state, action) => {
             return {
                 ...state,
                 results: action.payload,
+                loading: false
+            };
+        case GET_TEAMS:
+            return {
+                ...state,
+                teams: action.payload,
                 loading: false
             };
         case GET_FAVORITES:
