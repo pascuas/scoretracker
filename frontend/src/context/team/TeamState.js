@@ -7,6 +7,7 @@ import {
     GET_RESULTS,
     GET_FAVORITES,
     GET_TEAMS,
+    ADD_FAVORITE,
     RESULTS_ERROR
 } from '../types';
 
@@ -54,6 +55,22 @@ const TeamState = props => {
         }
     }
 
+    // Add Favorites
+    const addFaves = async favorite => {
+        const config = {
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }
+
+        try {
+            const res = await axios.post('/api/favorites', favorite, config);
+            dispatch({ type: ADD_FAVORITE, payload: res.data})
+        } catch (err) {
+            dispatch({ type: RESULTS_ERROR, payload: err.response.msg})
+        }
+    }
+
     return (
         <TeamContext.Provider
         value={{
@@ -63,7 +80,8 @@ const TeamState = props => {
             teams: state.teams,
             getResults,
             getTeams,
-            getFavs
+            getFavs,
+            addFaves
         }}>
             { props.children }
         </TeamContext.Provider>
