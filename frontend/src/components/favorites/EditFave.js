@@ -31,14 +31,15 @@ const EditFave = () => {
     const onSubmit = e => {
         e.preventDefault();
         addFaves(favorite)
+        setFavorite('')
     }
 
     const choices = teams.teams.map((team, index) => {
         return(
             <div className="form-check" key={index}>
-                <input className="form-check-input" type="checkbox" value={team.strTeam} onChange={onChange} id="defaultCheck1"></input>
+                <input className="form-check-input" name="teamName" type="radio" checked={teamName === `${team.strTeam}`} value={team.strTeam} onChange={onChange} id="defaultCheck1"></input>
                 <label className="form-check-label" htmlFor="defaultCheck1">{team.strTeam}</label>
-            </div>
+            </div>                                                                                                                                                                                                                                  
         )
     })
 
