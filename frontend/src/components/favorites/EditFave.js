@@ -4,7 +4,7 @@ import TeamContext from '../../context/team/teamContext';
 const EditFave = () => {
     const teamContext = useContext(TeamContext)
 
-    const { teams, getTeams, addFaves } = teamContext
+    const { teams, getTeams, addFaves, favorites } = teamContext
 
     const [favorite, setFavorite] = useState({
         teamName: ''
@@ -18,8 +18,10 @@ const EditFave = () => {
 
     if(teams === null) {
         return <></>
-    } 
+    }
+    
     console.log('teams', teams)
+    console.log('favs', favorites)
 
 
     const { teamName } = favorite
@@ -43,15 +45,52 @@ const EditFave = () => {
         )
     })
 
-    return (
-        <div>
+    // let faves = []
+    // if(favorites !== null) {
+    //     for (let i = 0; i<favorites.length; i++){
+    //         for(let j=0; j<teams.teams.length; j++){
+    //             if(favorites[i].teamName === teams.teams[j].strTeam){
+    //                 faves.push(teams.teams[j])
+    //             }
+    //         }
+    //     }
+    // }
+    // console.log(faves)
+
+    if(favorites === null) {
+        return (
+            <div>
             <h1>This is where I add or delete favorites</h1>
             <form onSubmit={onSubmit}>
             {choices}
             <button type='submit'>Add</button>
             </form>
         </div>
-        
+        )
+    }
+
+    const renderFaves = favorites.map((fave, index) => {
+        let team = teams.teams.find(team => team.strTeam === fave.teamName)
+        console.log('team', team)
+        return (
+            <Fragment>
+                <img src={team.strTeamLogo} />
+                <h1>{fave.teamName}</h1>
+            </Fragment>
+        )
+    })
+
+
+    return (
+        <div>
+            {renderFaves}
+            <h1>This is where I add or delete favorites</h1>
+            <form onSubmit={onSubmit}>
+            {choices}
+            <button type='submit'>Add</button>
+            </form>
+        </div>
+    
     )
 }
 
