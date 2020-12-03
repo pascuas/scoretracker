@@ -2,6 +2,7 @@ export const GET_RESULTS = 'GET_RESULTS';
 export const GET_FAVORITES = 'GET_FAVORITES';
 export const GET_TEAMS = 'GET_TEAMS';
 export const ADD_FAVORITE= 'ADD_FAVORITE';
+export const DELETE_FAVORITE= 'DELETE_FAVORITE';
 export const RESULTS_ERROR = 'RESULTS_ERROR';
 export const REGISTER_SUCCESS = 'REGISTER_SUCCESS';
 export const REGISTER_FAIL = 'REGISTER_FAIL';

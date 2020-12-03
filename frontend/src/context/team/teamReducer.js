@@ -3,6 +3,7 @@ import {
     GET_FAVORITES,
     RESULTS_ERROR,
     ADD_FAVORITE,
+    DELETE_FAVORITE,
     GET_TEAMS,
 } from '../types';
 
@@ -25,18 +26,24 @@ export default (state, action) => {
                 ...state,
                 favorites: [action.payload, ...state.favorites],
                 loading: false
-            }
+            };
+        case DELETE_FAVORITE:
+            return {
+                ...state,
+                favorites: state.favorites.filter(favorite => favorite._id !== action.payload),
+                loading: false
+            };
         case GET_FAVORITES:
             return {
                 ...state,
                 favorites: action.payload,
                 loading: false
-            }
+            };
         case RESULTS_ERROR:
             return {
                 ...state,
                 error: action.payload
-            }
+            };
         default:
             return state
     }

@@ -1,10 +1,11 @@
 import React, { Fragment, useContext, useEffect, useState } from 'react'
 import TeamContext from '../../context/team/teamContext';
+import FaveItem from './FaveItem';
 
 const EditFave = () => {
     const teamContext = useContext(TeamContext)
 
-    const { teams, getTeams, addFaves, favorites } = teamContext
+    const { teams, getTeams, addFaves, favorites, deleteFave } = teamContext
 
     const [favorite, setFavorite] = useState({
         teamName: ''
@@ -45,17 +46,6 @@ const EditFave = () => {
         )
     })
 
-    // let faves = []
-    // if(favorites !== null) {
-    //     for (let i = 0; i<favorites.length; i++){
-    //         for(let j=0; j<teams.teams.length; j++){
-    //             if(favorites[i].teamName === teams.teams[j].strTeam){
-    //                 faves.push(teams.teams[j])
-    //             }
-    //         }
-    //     }
-    // }
-    // console.log(faves)
 
     if(favorites === null) {
         return (
@@ -73,10 +63,7 @@ const EditFave = () => {
         let team = teams.teams.find(team => team.strTeam === fave.teamName)
         console.log('team', team)
         return (
-            <Fragment>
-                <img src={team.strTeamLogo} />
-                <h1>{fave.teamName}</h1>
-            </Fragment>
+            <FaveItem team={team} fave={fave} />
         )
     })
 

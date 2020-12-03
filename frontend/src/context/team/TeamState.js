@@ -8,6 +8,7 @@ import {
     GET_FAVORITES,
     GET_TEAMS,
     ADD_FAVORITE,
+    DELETE_FAVORITE,
     RESULTS_ERROR
 } from '../types';
 
@@ -71,6 +72,16 @@ const TeamState = props => {
         }
     }
 
+    // Delete Favorite
+    const deleteFave = async id => {
+        try {
+            await axios.delete(`/api/favorites/${id}`);
+            dispatch({ type: DELETE_FAVORITE, payload: id});
+        } catch (err) {
+            dispatch({ type: RESULTS_ERROR, payload: err.response.msg})
+        }
+    }
+
     return (
         <TeamContext.Provider
         value={{
@@ -81,7 +92,8 @@ const TeamState = props => {
             getResults,
             getTeams,
             getFavs,
-            addFaves
+            addFaves,
+            deleteFave
         }}>
             { props.children }
         </TeamContext.Provider>
