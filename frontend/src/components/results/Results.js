@@ -2,15 +2,15 @@ import React, { Fragment, useContext, useEffect } from 'react';
 import ResultItem from './ResultItem';
 import TeamContext from '../../context/team/teamContext';
 
-const Results = () => {
-    const teamContext = useContext(TeamContext);
+const Results = ({results}) => {
+    // const teamContext = useContext(TeamContext);
 
-    const { results, getResults } = teamContext;
+    // const { results, getResults } = teamContext;
 
-    useEffect(() => {
-        getResults();
-        // eslint-disable-next-line
-    }, []);
+    // useEffect(() => {
+    //     getResults();
+    //     // eslint-disable-next-line
+    // }, []);
     
     if(results === null) {
         return <></>

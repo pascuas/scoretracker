@@ -1,11 +1,11 @@
-import React, { Fragment, useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import TeamContext from '../../context/team/teamContext';
 import FaveItem from './FaveItem';
 
 const EditFave = () => {
     const teamContext = useContext(TeamContext)
 
-    const { teams, getTeams, addFaves, favorites, deleteFave } = teamContext
+    const { teams, getTeams, addFaves, favorites } = teamContext
 
     const [favorite, setFavorite] = useState({
         teamName: ''
@@ -63,7 +63,7 @@ const EditFave = () => {
         let team = teams.teams.find(team => team.strTeam === fave.teamName)
         console.log('team', team)
         return (
-            <FaveItem team={team} fave={fave} />
+            <FaveItem team={team} fave={fave} key={index}/>
         )
     })
 

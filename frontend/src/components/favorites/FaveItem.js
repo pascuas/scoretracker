@@ -7,7 +7,7 @@ const FaveItem = ({ team, fave }) => {
 
     const { deleteFave } = teamContext
 
-    const {strTeamLogo} = team;
+    const {strTeamLogo, teamName} = team;
 
     const {_id} = fave
     
@@ -17,8 +17,8 @@ const FaveItem = ({ team, fave }) => {
 
     return (
         <Fragment>
-            <img src={strTeamLogo} />
-            <i class="far fa-times-circle" onClick={onDelete}></i>
+            <img src={strTeamLogo} alt={teamName}/>
+            <i className="far fa-times-circle" onClick={onDelete}></i>
         </Fragment>
     )
 }
