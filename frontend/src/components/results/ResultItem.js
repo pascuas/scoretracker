@@ -4,23 +4,6 @@ const ResultItem = ({ event }) => {
 
     const { competitions, status } = event
 
-    // const renderResult = competitions[0].competitors.map((competitor, index) => {
-    //     return(
-    //         <Fragment key={index}>
-    //             <div className="itemFlex">
-    //                 <div className="info" >
-    //                     <img src={competitor.team.logo} alt="teamlogo" width="42" height="52" />
-    //                     {competitor.team.name ? <h1>{competitor.team.name}</h1> : <h1>{competitor.team.displayName}</h1> }
-    //                     <h3 className="record gray">({competitor.records[0].summary})</h3>
-    //                 </div>
-    //                 {status.type.description !== "Scheduled" ? <div className="score" >
-    //                     {parseInt(competitor.score) > parseInt(competitions[0].competitors[0].score) || parseInt(competitor.score) > parseInt(competitions[0].competitors[1].score) ? <span>{competitor.score}</span> : <span className="gray">{competitor.score}</span> }
-    //                 </div> : <></>}
-    //             </div>
-    //         </Fragment>
-    //     ) 
-    // })
-
     const renderTv = competitions[0].broadcasts[0].names.map((name, index) => {
         return(
             <span className="gray" key={index}> ({name}) </span>

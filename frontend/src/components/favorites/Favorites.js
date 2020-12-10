@@ -31,15 +31,6 @@ const Favorites = () => {
         )
     }) 
 
-    // if(results.events === null) {
-    //     return (<></>)
-    // }
-
-    // const faveScores = results.events.find(event => {favorites.includes(event.competitions[0].competitors[0].team.displayName) || favorites.includes(event.competitions[0].competitors[1].team.displayName)
-    //     return (
-    //         <h1>{event.shortName}</h1>
-    //     )
-    // })
 
     console.log('favescores', faveScores)
 
@@ -47,7 +38,7 @@ const Favorites = () => {
     return (
         <Fragment>
             {favorites.length === 0 ? <Link to='/editfavorites'>Add Favorites</Link> : <Link to='/editfavorites'>Edit Favorites</Link> }
-            {favorites !== null ? faveScores : <></>}
+            {faveScores}
         </Fragment>
     )
 }
