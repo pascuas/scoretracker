@@ -1,25 +1,27 @@
-import React, { Fragment, useContext, useEffect } from 'react'
+import React, { Fragment, useContext, useEffect, useState } from 'react'
 import TeamContext from '../../context/team/teamContext';
 import {Link} from 'react-router-dom';
 import axios from 'axios';
 
 
-const Favorites = ({favorites, results}) => {
+const Favorites = () => {
 
-    // const teamContext = useContext(TeamContext);
+    const teamContext = useContext(TeamContext);
 
-    // const { favorites, getFavs, results } = teamContext;
+    const { favorites, getFavs, getResults, results } = teamContext;
 
-    // useEffect(() => {
-    //     getFavs();
-    //     // eslint-disable-next-line
-    // }, []);
+    useEffect(() => {
+        getFavs();
+        // eslint-disable-next-line
+    }, []);
 
-    if (favorites === null ) {
+
+    if (results === null || favorites === null ) {
         return (<></>)
     }
 
     console.log('favs', favorites)
+
 
     const faveScores = favorites.map((fave,index) => {
         let score = results.events.find(event => event.competitions[0].competitors[0].team.displayName === fave.teamName || event.competitions[0].competitors[1].team.displayName === fave.teamName )
@@ -27,7 +29,19 @@ const Favorites = ({favorites, results}) => {
         return (
             <h1>{score.shortName}</h1>
         )
-    })
+    }) 
+
+    // if(results.events === null) {
+    //     return (<></>)
+    // }
+
+    // const faveScores = results.events.find(event => {favorites.includes(event.competitions[0].competitors[0].team.displayName) || favorites.includes(event.competitions[0].competitors[1].team.displayName)
+    //     return (
+    //         <h1>{event.shortName}</h1>
+    //     )
+    // })
+
+    console.log('favescores', faveScores)
 
 
     return (

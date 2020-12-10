@@ -22,17 +22,15 @@ const Home = () => {
 
     useEffect(() => {
         authContext.loadUser();
-        getFavs();
-        getResults()
         // eslint-disable-next-line
     }, []) // only want this to run when component loads so empty bracket is needed
 
     return (
         <Fragment>
             <h1>Favorites</h1>
-            {user !== null ? <Favorites favorites={favorites} results={results} /> : <a href='#!' onClick={onClick}>Add Favorites</a> }
+            {user !== null ? <Favorites /> : <a href='#!' onClick={onClick}>Add Favorites</a> }
             <h1>Results</h1>
-            <Results results={results} />
+            <Results />
         </Fragment>
     )
 }

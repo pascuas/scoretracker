@@ -7,6 +7,7 @@ import EditFave from './components/favorites/EditFave';
 import Register from './components/pages/Register';
 import Login from './components/pages/Login';
 import Alerts from './components/layout/Alerts';
+import Favorites from './components/favorites/Favorites';
 
 import TeamState from './context/team/TeamState';
 import AuthState from './context/auth/AuthState';

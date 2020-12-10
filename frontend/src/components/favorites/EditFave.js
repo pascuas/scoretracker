@@ -75,6 +75,7 @@ const EditFave = () => {
             <form onSubmit={onSubmit}>
             {choices}
             <button type='submit'>Add</button>
+            <button><a href="/">Back To Scores</a></button>
             </form>
         </div>
     
