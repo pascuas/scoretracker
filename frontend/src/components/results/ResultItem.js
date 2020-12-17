@@ -1,6 +1,12 @@
-import React from 'react'
+import React, {useContext} from 'react';
+import TeamContext from '../../context/team/teamContext';
+
 
 const ResultItem = ({ event }) => {
+
+    const teamContext = useContext(TeamContext);
+
+    const { favorites } = teamContext
 
     const { competitions, status } = event
 
@@ -21,6 +27,9 @@ const ResultItem = ({ event }) => {
     //     ) 
     // })
 
+    console.log('resultitem', favorites)
+
+
     const renderTv = competitions[0].broadcasts[0].names.map((name, index) => {
         return(
             <span className="gray" key={index}> ({name}) </span>
@@ -36,7 +45,7 @@ const ResultItem = ({ event }) => {
             <div className="itemFlex">
                 <div className="info" >
                     <img src={competitions[0].competitors[0].team.logo} alt="teamlogo" width="42" height="52" />
-                    {competitions[0].competitors[0].team.name ? <h1>{competitions[0].competitors[0].team.name}</h1> : <h1>{competitions[0].competitors[0].team.displayName}</h1> }
+                    {competitions[0].competitors[0].team.name  ? <h1>{competitions[0].competitors[0].team.name}</h1> : <h1>{competitions[0].competitors[0].team.displayName}</h1> }
                     <h3 className="record gray">({competitions[0].competitors[0].records[0].summary})</h3>
                 </div>
                 {status.type.description !== "Scheduled" ? <div className="score" >
@@ -58,7 +67,7 @@ const ResultItem = ({ event }) => {
                 {renderTv}
             </div> : <div className="gameInfo"><p>{status.type.shortDetail}</p></div>}
         </div>
-    )
+    ) 
 }
 
 export default ResultItem
