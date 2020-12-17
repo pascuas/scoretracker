@@ -1,4 +1,4 @@
-import React, { Fragment, useContext, useEffect, useState } from 'react'
+import React, { Fragment, useContext, useEffect } from 'react'
 import TeamContext from '../../context/team/teamContext';
 import {Link} from 'react-router-dom';
 import axios from 'axios';
@@ -8,7 +8,7 @@ const Favorites = () => {
 
     const teamContext = useContext(TeamContext);
 
-    const { favorites, getFavs, getResults, results } = teamContext;
+    const { favorites, getFavs, results } = teamContext;
 
     useEffect(() => {
         getFavs();
