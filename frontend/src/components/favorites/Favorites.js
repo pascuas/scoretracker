@@ -67,6 +67,14 @@ const Favorites = () => {
 
     console.log('favescores', faveScores)
 
+    for (let i = 0; i<faveScores.length; i++){
+        for (let j=1; j<faveScores.length; j++){
+            if (faveScores[i] === faveScores[j]){
+                faveScores.splice(i,1)
+            }
+        }
+    }
+
 
     return (
         <Fragment>
