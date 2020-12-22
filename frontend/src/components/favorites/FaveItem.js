@@ -1,23 +1,29 @@
 import React, {Fragment, useContext} from 'react';
 import TeamContext from '../../context/team/teamContext';
+import AlertContext from '../../context/alert/alertContext';
 
 const FaveItem = ({ team, fave }) => {
 
-    const teamContext = useContext(TeamContext)
+    const teamContext = useContext(TeamContext);
 
-    const { deleteFave } = teamContext
+    const alertContext = useContext(AlertContext);
 
-    const {strTeamLogo, teamName} = team;
+    const { deleteFave } = teamContext;
+
+    const { setAlert } = alertContext
+
+    const {strTeamLogo, strTeam} = team;
 
     const {_id} = fave
     
     const onDelete = () => {
         deleteFave(_id)
+        setAlert( `${strTeam} was deleted as a favorite`, 'danger');
     }
 
     return (
         <Fragment>
-            <img src={strTeamLogo} alt={teamName}/>
+            <img src={strTeamLogo} alt={strTeam}/>
             <i className="far fa-times-circle" onClick={onDelete}></i>
         </Fragment>
     )

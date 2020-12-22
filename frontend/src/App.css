@@ -10,6 +10,7 @@
   --primary-color: #2c69ff;
   --gray-color: gray;
   --danger-color: #dc3545;
+  --success-color: #28a745;
 }
 
 .gray {
@@ -236,6 +237,11 @@ h3 {
 
 .alert-danger {
   background: var(--danger-color);
+  color: #fff;
+}
+
+.alert-success {
+  background: var(--success-color);
   color: #fff;
 }
 
