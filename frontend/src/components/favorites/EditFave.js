@@ -1,11 +1,16 @@
 import React, { useContext, useEffect, useState } from 'react'
 import TeamContext from '../../context/team/teamContext';
+import AlertContext from '../../context/alert/alertContext';
 import FaveItem from './FaveItem';
 
 const EditFave = () => {
     const teamContext = useContext(TeamContext)
 
+    const alertContext = useContext(AlertContext)
+
     const { teams, getTeams, addFaves, favorites } = teamContext
+
+    const { setAlert } = alertContext
 
     const [favorite, setFavorite] = useState({
         teamName: ''
@@ -34,6 +39,7 @@ const EditFave = () => {
     const onSubmit = e => {
         e.preventDefault();
         addFaves(favorite)
+        setAlert(`${favorite.teamName} was added as a favorite`, 'success')
         setFavorite('')
     }
 
