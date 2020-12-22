@@ -32,7 +32,7 @@ const Favorites = () => {
         })
         console.log('score',score)
         return (
-            <div className="resultContainer">
+            <div className="resultContainer" key={score.id}>
             <div className="location">
                 <span className="gray">{score.competitions[0].venue.fullName} - {score.competitions[0].venue.address.city}, {score.competitions[0].venue.address.state}</span>
             </div>
@@ -77,10 +77,10 @@ const Favorites = () => {
     console.log('favescores', faveScores)
 
     for (let i = 0; i<faveScores.length; i++){
-        for (let j=1; j<faveScores.length; j++){
-            if (faveScores[i] === faveScores[j]){
+        for (let j=i+1; j<faveScores.length; j++){
+            if (faveScores[i].key === faveScores[j].key){
                 faveScores.splice(i,1)
-            }
+            } 
         }
     }
 
