@@ -22,10 +22,10 @@ const FaveItem = ({ team, fave }) => {
     }
 
     return (
-        <Fragment>
+        <div>
             <img src={strTeamLogo} alt={strTeam}/>
             <i className="far fa-times-circle" onClick={onDelete}></i>
-        </Fragment>
+        </div>
     )
 }
 

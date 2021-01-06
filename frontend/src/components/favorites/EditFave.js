@@ -75,7 +75,9 @@ const EditFave = () => {
 
     return (
         <div>
-            {renderFaves}
+            <div className='renderFaveGrid'>
+                {renderFaves}
+            </div>
             <form onSubmit={onSubmit} className='faveForm'>
             {choices}
             <button type='submit'>Add</button>
