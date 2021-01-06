@@ -19,5 +19,4 @@ app.use('/api/auth', authRoutes)
 app.use('/api/favorites', favRoutes)
 
 
-
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
