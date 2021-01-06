@@ -56,8 +56,7 @@ const EditFave = () => {
     if(favorites === null) {
         return (
             <div>
-            <h1>This is where I add or delete favorites</h1>
-            <form onSubmit={onSubmit}>
+            <form onSubmit={onSubmit} className='faveForm'>
             {choices}
             <button type='submit'>Add</button>
             </form>
@@ -77,8 +76,7 @@ const EditFave = () => {
     return (
         <div>
             {renderFaves}
-            <h1>This is where I add or delete favorites</h1>
-            <form onSubmit={onSubmit}>
+            <form onSubmit={onSubmit} className='faveForm'>
             {choices}
             <button type='submit'>Add</button>
             <button><a href="/">Back To Scores</a></button>

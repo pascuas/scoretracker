@@ -100,15 +100,22 @@ h1 {
   text-align: center;
 }
 
+.resultsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 0.4fr);
+  grid-gap: 1rem;
+  justify-content: center;
+}
+
 .resultContainer {
   max-width: 620px;
   margin-bottom: 2em;
   border: 1px solid black;
   display: grid;
-  grid-template-columns: 1fr 0.5fr;
+  grid-template-columns: 1fr 0.8fr;
   grid-template-rows: auto;
   grid-template-areas:
-    "location side"
+    "location location"
     "teamOne side"
     "teamTwo side"
 }
@@ -122,7 +129,7 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 400px;
+  width: 300px;
   grid-area: teamOne;
 }
 
@@ -130,7 +137,7 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 400px;
+  width: 300px;
   grid-area: teamTwo;
 }
 
@@ -138,6 +145,14 @@ h1 {
   grid-area: side;
   align-self: center;
   text-align: center;
+}
+
+.gameInfo p {
+  font-size: 0.8rem;
+}
+
+.gameInfo span {
+  font-size: 0.9rem;
 }
 
 .info {
@@ -151,6 +166,11 @@ h1 {
 
 .record {
   padding: 0.7em 0 0 0.5em;
+}
+
+.faveForm {
+  display: grid;
+  grid-template-columns: repeat(4, 0.4fr);
 }
 
 /* btns and forms */
@@ -244,5 +264,7 @@ h3 {
   background: var(--success-color);
   color: #fff;
 }
+
+
 
 

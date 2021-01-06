@@ -30,7 +30,9 @@ const Home = () => {
             <h1>Favorites</h1>
             {user !== null ? <Favorites /> : <a href='#!' onClick={onClick}>Add Favorites</a> }
             <h1>Results</h1>
-            <Results />
+            <div className='resultsGrid'>
+                <Results />
+            </div>
         </Fragment>
     )
 }
