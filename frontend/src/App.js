@@ -7,6 +7,7 @@ import EditFave from './components/favorites/EditFave';
 import Register from './components/pages/Register';
 import Login from './components/pages/Login';
 import Alerts from './components/layout/Alerts';
+import PrivateRoute from './components/routing/PrivateRoute';
 import Favorites from './components/favorites/Favorites';
 
 import TeamState from './context/team/TeamState';
@@ -32,7 +33,7 @@ const App = () => {
                 <Switch>
                   <Route exact path='/' component={Home} />
                   <Route exact path='/about' component={About} />
-                  <Route exact path='/editfavorites' component={EditFave} />
+                  <PrivateRoute exact path='/editfavorites' component={EditFave} />
                   <Route exact path='/register' component={Register} />
                   <Route exact path='/login' component={Login} />
                 </Switch>
