@@ -4,6 +4,7 @@ import Favorites from '../favorites/Favorites';
 import AuthContext from '../../context/auth/authContext';
 import AlertContext from '../../context/alert/alertContext';
 import TeamContext from '../../context/team/teamContext';
+import Spinner from '../layout/Spinner';
 
 
 const Home = () => {
@@ -13,7 +14,7 @@ const Home = () => {
 
     const { user , clearErrors } = authContext;
     const { setAlert } = alertContext;
-    const { getFavs, favorites, results, getResults } = teamContext;
+    const { getFavs, favorites, results, getResults, loading } = teamContext;
 
     const onClick = () => {
         setAlert('Please Sign In Or Create an Account', 'danger');
@@ -26,14 +27,14 @@ const Home = () => {
     }, []) // only want this to run when component loads so empty bracket is needed
 
     return (
-        <Fragment>
+        <Fragment> 
             <h1>Favorites</h1>
             {user !== null ? <Favorites /> : <a href='#!' onClick={onClick}>Add Favorites</a> }
             <h1>Results</h1>
             <div className='resultsGrid'>
                 <Results />
-            </div>
-        </Fragment>
+            </div> 
+        </Fragment> 
     )
 }
 

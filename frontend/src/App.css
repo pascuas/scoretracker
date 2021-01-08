@@ -96,10 +96,6 @@ ul {
   color: #fff;
 }
 
-h1 {
-  text-align: center;
-}
-
 .resultsGrid {
   display: grid;
   grid-template-columns: repeat(2, 0.4fr);

@@ -79,7 +79,9 @@ const Favorites = () => {
     return (
         <Fragment>
             {favorites.length === 0 ? <Link to='/editfavorites'>Add Favorites</Link> : <Link to='/editfavorites'>Edit Favorites</Link> }
-            {faveScores}
+            <div className='resultsGrid'>
+                {faveScores}
+            </div>
         </Fragment>
     )
 }
