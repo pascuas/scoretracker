@@ -44,7 +44,7 @@ const ResultItem = ({ event }) => {
             </div>
             <div className="itemFlex">
                 <div className="info" >
-                    <img src={competitions[0].competitors[0].team.logo} alt="teamlogo" width="42" height="52" />
+                    <img src={competitions[0].competitors[0].team.logo} alt="teamlogo" width="32" height="42" />
                     {competitions[0].competitors[0].team.name  ? <h2>{competitions[0].competitors[0].team.name}</h2> : <h2>{competitions[0].competitors[0].team.displayName}</h2> }
                     <h4 className="record gray">({competitions[0].competitors[0].records[0].summary})</h4>
                 </div>
@@ -54,7 +54,7 @@ const ResultItem = ({ event }) => {
             </div>
             <div className="itemFlex2">
                 <div className="info" >
-                    <img src={competitions[0].competitors[1].team.logo} alt="teamlogo" width="42" height="52" />
+                    <img src={competitions[0].competitors[1].team.logo} alt="teamlogo" width="32" height="42" />
                     {competitions[0].competitors[1].team.name ? <h2>{competitions[0].competitors[1].team.name}</h2> : <h2>{competitions[0].competitors[1].team.displayName}</h2> }
                     <h4 className="record gray">({competitions[0].competitors[1].records[0].summary})</h4>
                 </div>

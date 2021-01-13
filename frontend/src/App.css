@@ -25,6 +25,14 @@ body {
   color: #333;
 }
 
+h2 {
+  font-size: 1.4em;
+}
+
+h4 {
+  font-size: 0.9em;
+}
+
 a {
   color: #2c69ff;
   text-decoration: none;
@@ -98,8 +106,6 @@ ul {
 
 .resultsGrid {
   display: grid;
-  grid-template-columns: repeat(2, 0.4fr);
-  grid-gap: 1rem;
   justify-content: center;
 }
 
@@ -108,7 +114,7 @@ ul {
   margin-bottom: 2em;
   border: 1px solid black;
   display: grid;
-  grid-template-columns: 1fr 0.8fr;
+  grid-template-columns: 60% 40%;
   grid-template-rows: auto;
   grid-template-areas:
     "location location"
@@ -118,7 +124,11 @@ ul {
 
 .location {
   grid-area: location;
-  padding-left: 1em;
+  padding-left: 0.5em;
+}
+
+.location span {
+  font-size: 0.9em;
 }
 
 .itemFlex {
@@ -278,10 +288,15 @@ h3 {
 }
 
 /* Responsive : Tablet */
-@media(min-width: 768px) {
+/* @media(min-width: 768px) {
   .resultContainer {
     max-width: 310px;
     grid-template-columns: 75% 25%;
+  }
+
+  .resultsGrid {
+    grid-template-columns: repeat(2, 0.4fr);
+    grid-gap: 1rem;
   }
 
   .itemFlex,
@@ -305,7 +320,17 @@ h3 {
   .score span {
     padding-right: 0;
   }
-}
+
+  .location {
+    padding-left: 0.4em;
+  }
+
+  .location span {
+    font-size: small;
+  }
+} */
+
+
 
 
 
