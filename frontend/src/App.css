@@ -288,10 +288,11 @@ h3 {
 }
 
 /* Responsive : Tablet */
-/* @media(min-width: 768px) {
+@media(min-width: 768px) {
   .resultContainer {
     max-width: 310px;
-    grid-template-columns: 75% 25%;
+    grid-template-columns: 65% 35%;
+    margin-bottom: 0;
   }
 
   .resultsGrid {
@@ -302,6 +303,10 @@ h3 {
   .itemFlex,
   .itemFlex2 {
     width: auto;
+  }
+
+  .info {
+    padding-left: 0.5em;
   }
 
   .info img {
@@ -317,6 +322,10 @@ h3 {
     font-size: 0.8em;
   }
 
+  .gameInfo p {
+    font-size: 0.77em;
+  }
+
   .score span {
     padding-right: 0;
   }
@@ -328,8 +337,14 @@ h3 {
   .location span {
     font-size: small;
   }
-} */
+}
 
+@media(min-width: 1024px) {
+  .resultContainer {
+    max-width: 620px;
+    grid-template-columns: 60% 40%;
+  }
+}
 
 
 
