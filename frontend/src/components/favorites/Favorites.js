@@ -20,11 +20,15 @@ const Favorites = () => {
         return (<></>)
     }
 
+
     console.log('favs', favorites)
 
 
     const faveScores = favorites.map((fave,index) => {
         let score = results.events.find(event => event.competitions[0].competitors[0].team.displayName === fave.teamName || event.competitions[0].competitors[1].team.displayName === fave.teamName )
+        if (score === undefined) {
+            return <></>
+        }
         const renderTv = score.competitions[0].broadcasts[0].names.map((name, index) => {
             return(
                 <span className="gray" key={index}> ({name}) </span>

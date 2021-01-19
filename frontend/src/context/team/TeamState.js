@@ -48,7 +48,7 @@ const TeamState = props => {
     // Get teams
     const getTeams = async () => {
         try {
-            const res = await axios.get("https://cors-anywhere.herokuapp.com/https://www.thesportsdb.com/api/v1/json/4013017/search_all_teams.php?l=NFL");
+            const res = await axios.get("https://cors-anywhere.herokuapp.com/https://www.thesportsdb.com/api/v1/json/1/search_all_teams.php?l=NFL");
     
             dispatch({ type: GET_TEAMS, payload: res.data});
         } catch (err) {

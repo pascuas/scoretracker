@@ -10,11 +10,11 @@ import Spinner from '../layout/Spinner';
 const Home = () => {
     const authContext = useContext(AuthContext);
     const alertContext = useContext(AlertContext);
-    const teamContext = useContext(TeamContext);
+    const teamContext = useContext(TeamContext)
 
     const { user , clearErrors } = authContext;
     const { setAlert } = alertContext;
-    const { getFavs, favorites, results, getResults, loading } = teamContext;
+    const { getFavs, favorites, results, getResults } = teamContext;
 
     const onClick = () => {
         setAlert('Please Sign In Or Create an Account', 'danger');
