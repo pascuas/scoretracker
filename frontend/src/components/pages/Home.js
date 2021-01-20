@@ -12,7 +12,7 @@ const Home = () => {
     const alertContext = useContext(AlertContext);
     const teamContext = useContext(TeamContext)
 
-    const { user , clearErrors } = authContext;
+    const { user , clearErrors, loading } = authContext;
     const { setAlert } = alertContext;
     const { getFavs, favorites, results, getResults } = teamContext;
 
@@ -25,6 +25,10 @@ const Home = () => {
         authContext.loadUser();
         // eslint-disable-next-line
     }, []) // only want this to run when component loads so empty bracket is needed
+
+    if(loading){
+        return <Spinner />
+    }
 
     return (
         <Fragment> 

@@ -1,6 +1,7 @@
 import React, { Fragment, useContext, useEffect } from 'react';
 import ResultItem from './ResultItem';
 import TeamContext from '../../context/team/teamContext';
+import Spinner from '../layout/Spinner';
 
 const Results = () => {
     const teamContext = useContext(TeamContext);
