@@ -80,8 +80,8 @@ const EditFave = () => {
             </div>
             <form onSubmit={onSubmit} className='faveForm'>
             {choices}
-            <button type='submit'>Add</button>
-            <button><a href="/">Back To Scores</a></button>
+            <button className="buttonOne" type='submit'>Add</button>
+            <button className="buttonTwo"><a href="/">Back To Scores</a></button>
             </form>
         </div>
     

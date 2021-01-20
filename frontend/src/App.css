@@ -106,7 +106,7 @@ ul {
 
 .resultsGrid {
   display: grid;
-  justify-content: center;
+  /* justify-content: center; */
 }
 
 .resultContainer {
@@ -114,7 +114,7 @@ ul {
   margin-bottom: 2em;
   border: 1px solid black;
   display: grid;
-  grid-template-columns: 60% 40%;
+  grid-template-columns: 80% 20%;
   grid-template-rows: auto;
   grid-template-areas:
     "location location"
@@ -177,7 +177,7 @@ ul {
 
 .renderFaveGrid {
   display: grid;
-  grid-template-columns: repeat(2, 0.4fr);
+  /* grid-template-columns: repeat(2, 0.4fr); */
   justify-content: center;
   grid-gap: 2rem;
 }
@@ -187,12 +187,28 @@ ul {
 }
 
 .renderFaveGrid div img {
-  max-width: 40%;
+  max-width: 55%;
+  margin: auto;
 }
 
 .faveForm {
   display: grid;
-  grid-template-columns: repeat(4, 0.4fr);
+  grid-template-columns: repeat(2, 0.5fr);
+}
+
+.faveForm button {
+  font-size: 0.9rem;
+  color:#333;
+}
+
+.faveForm button a {
+  font-size: 0.9rem;
+  color:#333;
+}
+
+
+.form-check label {
+  font-size: 0.85rem;
 }
 
 /* btns and forms */
@@ -296,6 +312,7 @@ h3 {
   }
 
   .resultsGrid {
+    justify-content: center;
     grid-template-columns: repeat(2, 0.4fr);
     grid-gap: 1rem;
   }
@@ -337,12 +354,30 @@ h3 {
   .location span {
     font-size: small;
   }
+
+  .renderFaveGrid {
+    grid-template-columns: repeat(2, 0.4fr);
+  }
+
+  .faveForm {
+    grid-template-columns: repeat(4, 0.4fr);
+  }
+
+  .buttonOne {
+    grid-column-start: 2;
+  }
+
+  .buttonTwo {
+    grid-column-start: 3;
+  }
+
+  
 }
 
 @media(min-width: 1024px) {
   .resultContainer {
     max-width: 620px;
-    grid-template-columns: 60% 40%;
+    grid-template-columns: 70% 30%;
   }
 }
 
