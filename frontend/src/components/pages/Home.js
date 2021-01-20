@@ -14,7 +14,7 @@ const Home = () => {
 
     const { user , clearErrors, loading } = authContext;
     const { setAlert } = alertContext;
-    const { getFavs, favorites, results, getResults } = teamContext;
+    const { getFavs, favorites, results, getResults, teams } = teamContext;
 
     const onClick = () => {
         setAlert('Please Sign In Or Create an Account', 'danger');
@@ -23,10 +23,11 @@ const Home = () => {
 
     useEffect(() => {
         authContext.loadUser();
+        getResults();
         // eslint-disable-next-line
     }, []) // only want this to run when component loads so empty bracket is needed
 
-    if(loading){
+    if(results === null){
         return <Spinner />
     }
 

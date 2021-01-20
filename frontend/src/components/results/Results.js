@@ -8,14 +8,14 @@ const Results = () => {
 
     const { results, getResults, favorites } = teamContext;
 
-    useEffect(() => {
-        getResults();
-        // eslint-disable-next-line
-    }, []);
+    // useEffect(() => {
+    //     getResults();
+    //     // eslint-disable-next-line
+    // }, []);
     
-    if(results === null) {
-        return <></>
-    }
+    // if(results === null) {
+    //     return <></>
+    // }
     console.log('results',results.events)
 
     const renderResults = results.events.map((event, index) => {
