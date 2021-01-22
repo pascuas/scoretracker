@@ -27,13 +27,13 @@ const Navbar = ({ title }) => {
     const guestLinks = (
         <Fragment>
            <li>
-               <Link to='/'>Home</Link>
-           </li>
-           <li>
                 <Link to='/register'>Register</Link>
             </li>
             <li>
                 <Link to='/login'>Login</Link>
+            </li>
+            <li>
+                <Link to='/about'>About</Link>
             </li>
         </Fragment>
     )
@@ -41,7 +41,7 @@ const Navbar = ({ title }) => {
     return (
         <div className="navbar">
             <h1>
-                {title}
+                <Link to='/'>{title}</Link>
             </h1>
             <ul>
               {isAuthenticated ? authLinks : guestLinks}

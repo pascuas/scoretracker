@@ -68,7 +68,7 @@ ul {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.7rem 2rem;
+  padding: 0.7rem 1rem;
   z-index: 1;
   width: 100%;
   border-bottom: solid 1px #2c69ff;
@@ -76,6 +76,10 @@ ul {
   color: #fff;
   opacity: 0.9;
   margin-bottom: 1rem;
+}
+
+.navbar h1 {
+  font-size: 1.8em
 }
 
 .navbar ul {
@@ -86,6 +90,10 @@ ul {
   color: #fff;
   padding: 0.45rem;
   margin: 0 0.25rem;
+}
+
+.navbar ul li a {
+  font-size: 0.9em;
 }
 
 .navbar a:hover {
@@ -387,6 +395,13 @@ h3 {
     grid-column-start: 3;
   }
 
+  .navbar h1 {
+    font-size: 2em;
+  }  
+
+  .navbar ul li a {
+    font-size: 1em;
+  }
   
 }
 
