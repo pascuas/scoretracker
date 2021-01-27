@@ -8,8 +8,6 @@ import Register from './components/pages/Register';
 import Login from './components/pages/Login';
 import Alerts from './components/layout/Alerts';
 import PrivateRoute from './components/routing/PrivateRoute';
-import Favorites from './components/favorites/Favorites';
-
 import TeamState from './context/team/TeamState';
 import AuthState from './context/auth/AuthState';
 import AlertState from './context/alert/AlertState';

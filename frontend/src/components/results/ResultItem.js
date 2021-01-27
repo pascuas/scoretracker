@@ -27,8 +27,6 @@ const ResultItem = ({ event }) => {
     //     ) 
     // })
 
-    console.log('resultitem', favorites)
-
 
     const renderTv = competitions[0].broadcasts[0].names.map((name, index) => {
         return(
@@ -45,8 +43,8 @@ const ResultItem = ({ event }) => {
             <div className="itemFlex">
                 <div className="info" >
                     <img src={competitions[0].competitors[0].team.logo} alt="teamlogo" width="32" height="42" />
-                    {competitions[0].competitors[0].team.name  ? <h2>{competitions[0].competitors[0].team.name}</h2> : <h2>{competitions[0].competitors[0].team.displayName}</h2> }
-                    <h4 className="record gray">({competitions[0].competitors[0].records[0].summary})</h4>
+                    {competitions[0].competitors[0].team.name ? <h2>{competitions[0].competitors[0].team.name}</h2> : <h2>{competitions[0].competitors[0].team.displayName}</h2> }
+                    {competitions[0].competitors[0].records && <h4 className="record gray">({competitions[0].competitors[0].records[0].summary})</h4>}
                 </div>
                 {status.type.description !== "Scheduled" ? <div className="score" >
                     {parseInt(competitions[0].competitors[0].score) > parseInt(competitions[0].competitors[0].score) || parseInt(competitions[0].competitors[0].score) > parseInt(competitions[0].competitors[1].score) ? <span>{competitions[0].competitors[0].score}</span> : <span className="gray">{competitions[0].competitors[0].score}</span> }
@@ -56,7 +54,7 @@ const ResultItem = ({ event }) => {
                 <div className="info" >
                     <img src={competitions[0].competitors[1].team.logo} alt="teamlogo" width="32" height="42" />
                     {competitions[0].competitors[1].team.name ? <h2>{competitions[0].competitors[1].team.name}</h2> : <h2>{competitions[0].competitors[1].team.displayName}</h2> }
-                    <h4 className="record gray">({competitions[0].competitors[1].records[0].summary})</h4>
+                    {competitions[0].competitors[0].record && <h4 className="record gray">({competitions[0].competitors[1].records[0].summary})</h4>}
                 </div>
                 {status.type.description !== "Scheduled" ? <div className="score" >
                     {parseInt(competitions[0].competitors[1].score) > parseInt(competitions[0].competitors[0].score) || parseInt(competitions[0].competitors[1].score) > parseInt(competitions[0].competitors[1].score) ? <span>{competitions[0].competitors[1].score}</span> : <span className="gray">{competitions[0].competitors[1].score}</span> }

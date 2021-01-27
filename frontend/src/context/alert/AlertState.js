@@ -1,6 +1,5 @@
 import React, { useReducer } from 'react';
 import {v4 as uuid} from 'uuid';
-import axios from 'axios';
 import AlertContext from './alertContext';
 import alertReducer from './alertReducer';
 

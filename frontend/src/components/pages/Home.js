@@ -12,9 +12,9 @@ const Home = () => {
     const alertContext = useContext(AlertContext);
     const teamContext = useContext(TeamContext)
 
-    const { user , clearErrors, loading } = authContext;
+    const { user , clearErrors } = authContext;
     const { setAlert } = alertContext;
-    const { getFavs, favorites, results, getResults, teams } = teamContext;
+    const { results, getResults } = teamContext;
 
     const onClick = () => {
         setAlert('Please Sign In Or Create an Account', 'danger');
