@@ -5,6 +5,7 @@ import teamReducer from './teamReducer';
 
 import {
     GET_RESULTS,
+    GET_NBARESULTS,
     GET_FAVORITES,
     GET_TEAMS,
     ADD_FAVORITE,
@@ -15,6 +16,7 @@ import {
 const TeamState = props => {
     const initialState = {
         results: null,
+        nbaResults: null,
         favorites: null,
         error: null,
         teams: null
@@ -31,6 +33,17 @@ const TeamState = props => {
             dispatch({ type: GET_RESULTS, payload: res.data});
         } catch (err) {
             dispatch({ type: RESULTS_ERROR, payload: err.response.msg });
+        }
+    }
+
+    // get nba results
+    const getNbaResults = async () => {
+        try {
+            const res = await axios.get("https://cors-anywhere.herokuapp.com/https://www.thesportsdb.com/api/v2/json/4013017/livescore.php?s=Basketball");
+
+            dispatch({ type: GET_NBARESULTS, payload: res.data });
+        } catch (error) {
+            dispatch({ type: RESULTS_ERROR, payload: error.response.msg });
         }
     }
 
@@ -90,6 +103,7 @@ const TeamState = props => {
             error: state.error,
             teams: state.teams,
             getResults,
+            getNbaResults,
             getTeams,
             getFavs,
             addFaves,

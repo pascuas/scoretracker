@@ -1,4 +1,5 @@
 export const GET_RESULTS = 'GET_RESULTS';
+export const GET_NBARESULTS = 'GET_NBARESULTS';
 export const GET_FAVORITES = 'GET_FAVORITES';
 export const GET_TEAMS = 'GET_TEAMS';
 export const ADD_FAVORITE= 'ADD_FAVORITE';

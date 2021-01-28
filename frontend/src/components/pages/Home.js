@@ -14,7 +14,7 @@ const Home = () => {
 
     const { user , clearErrors, loading } = authContext;
     const { setAlert } = alertContext;
-    const { getFavs, favorites, results, getResults, teams } = teamContext;
+    const { getFavs, favorites, results, getResults, teams, getNbaResults, nbaResults } = teamContext;
 
     const onClick = () => {
         setAlert('Please Sign In Or Create an Account', 'danger');
@@ -30,6 +30,8 @@ const Home = () => {
     if(results === null){
         return <Spinner />
     }
+
+    console.log('nba', nbaResults)
 
     return (
         <Fragment> 

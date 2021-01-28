@@ -1,5 +1,6 @@
 import {
     GET_RESULTS,
+    GET_NBARESULTS,
     GET_FAVORITES,
     RESULTS_ERROR,
     ADD_FAVORITE,
@@ -13,6 +14,12 @@ export default (state, action) => {
             return {
                 ...state,
                 results: action.payload,
+                loading: false
+            };
+        case GET_NBARESULTS:
+            return {
+                ...state,
+                nabResults: action.payload,
                 loading: false
             };
         case GET_TEAMS:
