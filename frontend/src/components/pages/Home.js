@@ -12,9 +12,9 @@ const Home = () => {
     const alertContext = useContext(AlertContext);
     const teamContext = useContext(TeamContext)
 
-    const { user , clearErrors, loading } = authContext;
+    const { user , clearErrors } = authContext;
     const { setAlert } = alertContext;
-    const { getFavs, favorites, results, getResults, teams, getNbaResults, nbaResults } = teamContext;
+    const { results, getResults, nbaResults, getNbaResults, nbaTeams, getNbaTeams } = teamContext;
 
     const onClick = () => {
         setAlert('Please Sign In Or Create an Account', 'danger');
@@ -24,6 +24,8 @@ const Home = () => {
     useEffect(() => {
         authContext.loadUser();
         getResults();
+        getNbaResults();
+        getNbaTeams();
         // eslint-disable-next-line
     }, []) // only want this to run when component loads so empty bracket is needed
 
@@ -31,7 +33,9 @@ const Home = () => {
         return <Spinner />
     }
 
-    console.log('nba', nbaResults)
+    console.log('results', results)
+    console.log('nbaresults', nbaResults)
+    console.log('nbateams', nbaTeams)
 
     return (
         <Fragment> 

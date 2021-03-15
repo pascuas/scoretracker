@@ -6,6 +6,7 @@ import {
     ADD_FAVORITE,
     DELETE_FAVORITE,
     GET_TEAMS,
+    GET_NBATEAMS,
 } from '../types';
 
 export default (state, action) => {
@@ -19,13 +20,19 @@ export default (state, action) => {
         case GET_NBARESULTS:
             return {
                 ...state,
-                nabResults: action.payload,
+                nbaResults: action.payload,
                 loading: false
             };
         case GET_TEAMS:
             return {
                 ...state,
                 teams: action.payload,
+                loading: false
+            };
+        case GET_NBATEAMS:
+            return {
+                ...state,
+                nbaTeams: action.payload,
                 loading: false
             };
         case ADD_FAVORITE:

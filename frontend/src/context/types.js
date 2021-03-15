@@ -2,6 +2,7 @@ export const GET_RESULTS = 'GET_RESULTS';
 export const GET_NBARESULTS = 'GET_NBARESULTS';
 export const GET_FAVORITES = 'GET_FAVORITES';
 export const GET_TEAMS = 'GET_TEAMS';
+export const GET_NBATEAMS = 'GET_NBATEAMS';
 export const ADD_FAVORITE= 'ADD_FAVORITE';
 export const DELETE_FAVORITE= 'DELETE_FAVORITE';
 export const RESULTS_ERROR = 'RESULTS_ERROR';

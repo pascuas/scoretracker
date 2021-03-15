@@ -1,7 +1,6 @@
 import React, { Fragment, useContext, useEffect } from 'react'
 import TeamContext from '../../context/team/teamContext';
 import {Link} from 'react-router-dom';
-import axios from 'axios';
 
 
 const Favorites = () => {
