@@ -1,5 +1,6 @@
 import React, { Fragment, useContext, useEffect } from 'react';
 import Results from '../results/Results';
+import NBAResults from '../results/NbaResults';
 import Favorites from '../favorites/Favorites';
 import AuthContext from '../../context/auth/authContext';
 import AlertContext from '../../context/alert/alertContext';
@@ -34,8 +35,7 @@ const Home = () => {
     }
 
     console.log('results', results)
-    console.log('nbaresults', nbaResults)
-    console.log('nbateams', nbaTeams)
+   
 
     return (
         <Fragment> 
@@ -44,6 +44,7 @@ const Home = () => {
             <h1>Results</h1>
             <div className='resultsGrid'>
                 <Results />
+                <NBAResults />
             </div> 
         </Fragment> 
     )
