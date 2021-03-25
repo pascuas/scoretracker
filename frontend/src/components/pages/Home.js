@@ -15,7 +15,7 @@ const Home = () => {
 
     const { user , clearErrors } = authContext;
     const { setAlert } = alertContext;
-    const { results, getResults, nbaResults, getNbaResults, nbaTeams, getNbaTeams } = teamContext;
+    const { results, getResults, nbaResults, getNbaResults, nbaTeams, getNbaTeams, getMlbResults, mlbResults, mlbTeams, getMlbTeams } = teamContext;
 
     const onClick = () => {
         setAlert('Please Sign In Or Create an Account', 'danger');
@@ -26,6 +26,7 @@ const Home = () => {
         authContext.loadUser();
         getResults();
         getNbaResults();
+        getMlbResults();
         getNbaTeams();
         // eslint-disable-next-line
     }, []) // only want this to run when component loads so empty bracket is needed
@@ -35,6 +36,7 @@ const Home = () => {
     }
 
     console.log('results', results)
+    console.log('mlbresults', mlbResults)
    
 
     return (

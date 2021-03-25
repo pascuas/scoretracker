@@ -53,7 +53,7 @@ const NBAItem = ({game, home, visitor}) => {
                     {vTeam.loss !== "" && vTeam.win !== "" && <h4 className="record gray">({vTeam.win} - {vTeam.loss})</h4>}
                 </div>
                 {isGameActivated ? <div className="score">
-                    {parseInt(hTeam.score) > parseInt(vTeam.score) ? <span>{hTeam.score}</span> : <span className="gray">{hTeam.score}</span>}
+                    {parseInt(vTeam.score) > parseInt(hTeam.score) ? <span>{vTeam.score}</span> : <span className="gray">{vTeam.score}</span>}
                 </div> : <></> }
             </div>
             {!isGameActivated ? <div className="gameInfo">

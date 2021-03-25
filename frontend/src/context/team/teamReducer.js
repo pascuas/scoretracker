@@ -1,12 +1,14 @@
 import {
     GET_RESULTS,
     GET_NBARESULTS,
+    GET_MLBRESULTS,
     GET_FAVORITES,
     RESULTS_ERROR,
     ADD_FAVORITE,
     DELETE_FAVORITE,
     GET_TEAMS,
     GET_NBATEAMS,
+    GET_MLBTEAMS,
 } from '../types';
 
 export default (state, action) => {
@@ -23,6 +25,12 @@ export default (state, action) => {
                 nbaResults: action.payload,
                 loading: false
             };
+        case GET_MLBRESULTS:
+            return {
+                ...state,
+                mlbResults: action.payload,
+                loading: false
+            };
         case GET_TEAMS:
             return {
                 ...state,
@@ -33,6 +41,12 @@ export default (state, action) => {
             return {
                 ...state,
                 nbaTeams: action.payload,
+                loading: false
+            };
+        case GET_MLBTEAMS:
+            return {
+                ...state,
+                mlbTeams: action.payload,
                 loading: false
             };
         case ADD_FAVORITE:

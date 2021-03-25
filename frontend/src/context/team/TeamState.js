@@ -6,9 +6,11 @@ import teamReducer from './teamReducer';
 import {
     GET_RESULTS,
     GET_NBARESULTS,
+    GET_MLBRESULTS,
     GET_FAVORITES,
     GET_TEAMS,
     GET_NBATEAMS,
+    GET_MLBTEAMS,
     ADD_FAVORITE,
     DELETE_FAVORITE,
     RESULTS_ERROR
@@ -18,10 +20,12 @@ const TeamState = props => {
     const initialState = {
         results: null,
         nbaResults: null,
+        mlbResults: null,
         favorites: null,
         error: null,
         teams: null,
         nbaTeams: null,
+        mlbTeams: null,
     };
 
 
@@ -48,7 +52,18 @@ const TeamState = props => {
 
             dispatch({ type: GET_NBARESULTS, payload: res.data });
         } catch (err) {
-            dispatch({ type: RESULTS_ERROR, payload: err.response.msg });
+            dispatch({ type: RESULTS_ERROR, payload: err });
+        }
+    }
+
+    // get mlb results
+    const getMlbResults = async () => {
+        try {
+            const res = await axios.get("https://www.thesportsdb.com/api/v2/json/4013017/livescore.php?l=4424");
+
+            dispatch({ type: GET_MLBRESULTS, payload: res.data});
+        } catch (err) {
+            dispatch({ type: RESULTS_ERROR, payload: err})
         }
     }
 
@@ -81,7 +96,18 @@ const TeamState = props => {
     
             dispatch({ type: GET_NBATEAMS, payload: res.data});
         } catch (err) {
-            dispatch({ type: RESULTS_ERROR, payload: err.response.msg });
+            dispatch({ type: RESULTS_ERROR, payload: err});
+        }
+    }
+
+    // Get Mlb Teams
+    const getMlbTeams = async () => {
+        try {
+            const res = await axios.get("https://www.thesportsdb.com/api/v1/json/1/lookup_all_teams.php?id=4424");
+
+            dispatch({ type: GET_MLBTEAMS, payload: res.data});
+        } catch (err) {
+            dispatch({ type: RESULTS_ERROR, payload: err})
         }
     }
 
@@ -116,14 +142,18 @@ const TeamState = props => {
         value={{
             results: state.results,
             nbaResults: state.nbaResults,
+            mlbResults: state.mlbResults,
             favorites: state.favorites,
             error: state.error,
             teams: state.teams,
             nbaTeams: state.nbaTeams,
+            mlbTeams: state.mlbTeams,
             getResults,
             getNbaResults,
+            getMlbResults,
             getTeams,
             getNbaTeams,
+            getMlbTeams,
             getFavs,
             addFaves,
             deleteFave
