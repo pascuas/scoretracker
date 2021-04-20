@@ -13,12 +13,12 @@ const NbaResults = () => {
     if (!nbaResults) return <></>
     if (!nbaTeams) return <></>
 
-    console.log(nbaResults.games)
+    console.log(nbaResults.results)
     console.log(nbaTeams.teams)
 
-    const renderNBA = nbaResults.games.map((game,index) => {
-        let homeTeam = nbaTeams.teams.filter(team => game.hTeam.triCode === team.strTeamShort);
-        let visitorTeam = nbaTeams.teams.filter(team => game.vTeam.triCode === team.strTeamShort);
+    const renderNBA = nbaResults.results.map((game,index) => {
+        let homeTeam = nbaTeams.teams.filter(team => game.teams['home']['abbreviation'] === team.strTeamShort);
+        let visitorTeam = nbaTeams.teams.filter(team => game.teams['away']['abbreviation'] === team.strTeamShort);
         return (
             <NBAItem key={index} game={game} home={homeTeam} visitor={visitorTeam} />
         )
