@@ -28,6 +28,7 @@ const Home = () => {
         getNbaResults();
         getMlbResults();
         getNbaTeams();
+        getMlbTeams();
         // eslint-disable-next-line
     }, []) // only want this to run when component loads so empty bracket is needed
 
@@ -37,6 +38,8 @@ const Home = () => {
 
     console.log('results', results)
     console.log('mlbresults', mlbResults)
+    console.log('mlbteams', mlbTeams)
+    
    
 
     return (

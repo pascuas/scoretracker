@@ -13,7 +13,7 @@ const NbaResults = () => {
     if (!nbaResults) return <></>
     if (!nbaTeams) return <></>
 
-    console.log(nbaResults.results)
+    // console.log(nbaResults.results)
     console.log(nbaTeams.teams)
 
     const renderNBA = nbaResults.results.map((game,index) => {
