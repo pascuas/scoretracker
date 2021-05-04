@@ -48,14 +48,15 @@ const TeamState = props => {
     // get nba results
     const getNbaResults = async () => {
         try {
-            const res = await axios.get("https://www.thesportsdb.com/api/v1/json/4013017/latestbasketball.php");
-            // const res = await axios.get("https://sportspage-feeds.p.rapidapi.com/games", {
-            //     params: {league: 'NBA'},
-            //     headers: {
-            //         'x-rapidapi-key': '7f780f155amsh354c76bc152bd01p18a0eejsn14db727979be',
-            //         'x-rapidapi-host': 'sportspage-feeds.p.rapidapi.com'
-            //     }
-            // });
+            // const res = await axios.get("https://www.thesportsdb.com/api/v2/json/4013017/livescore.php?l=4387");
+            // const res = await axios.get("https://www.thesportsdb.com/api/v1/json/4013017/lookuptable.php?l=4387&s=2020-2021");
+            const res = await axios.get("https://sportspage-feeds.p.rapidapi.com/games", {
+                params: {league: 'NBA'},
+                headers: {
+                    'x-rapidapi-key': '7f780f155amsh354c76bc152bd01p18a0eejsn14db727979be',
+                    'x-rapidapi-host': 'sportspage-feeds.p.rapidapi.com'
+                }
+            });
             
 
             dispatch({ type: GET_NBARESULTS, payload: res.data });
